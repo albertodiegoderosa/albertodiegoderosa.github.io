@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Basic document metadata -->
   <meta charset="utf-8">
   <title>Alberto De Rosa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,11 +11,13 @@
   >
   <meta name="theme-color" content="#0a58ca">
 
+  <!-- Icons / PWA metadata -->
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
 
+  <!-- Social sharing metadata -->
   <meta property="og:title" content="Alberto De Rosa">
   <meta property="og:description" content="Postdoctoral researcher in bioacoustics at the University of Alberta.">
   <meta property="og:type" content="website">
@@ -22,6 +25,7 @@
   <meta property="og:image" content="https://albertodiegoderosa.github.io/assets/og-image.jpg">
 
   <style>
+    /* Colour tokens */
     :root {
       --bg: #2b1b10;
       --fg: #f5f5f5;
@@ -31,6 +35,7 @@
       --accent: #b8ff7a;
     }
 
+    /* Slightly adjusted palette for users who prefer dark mode */
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1a1209;
@@ -42,6 +47,7 @@
       }
     }
 
+    /* Base layout */
     * {
       box-sizing: border-box;
     }
@@ -80,6 +86,7 @@
       padding: 1.5rem;
     }
 
+    /* Intro block with portrait and summary */
     header {
       display: grid;
       grid-template-columns: 96px 1fr;
@@ -110,6 +117,7 @@
       color: var(--muted);
     }
 
+    /* Shared layout helpers */
     .grid {
       display: grid;
       gap: 0.9rem;
@@ -121,6 +129,13 @@
       }
     }
 
+    .inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
     .list {
       padding-left: 1.1rem;
     }
@@ -129,26 +144,12 @@
       margin: 0.35rem 0;
     }
 
-    .item h3 {
-      margin: 0.2rem 0;
-      font-size: 1rem;
-    }
-
     .meta {
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .pill {
-      display: inline-block;
-      margin: 0.25rem 0.35rem 0.25rem 0;
-      padding: 0.25rem 0.6rem;
-      border: 1px solid var(--muted);
-      border-radius: 999px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
+    /* Link buttons used in the header */
     .btn {
       display: inline-block;
       padding: 0.5rem 0.9rem;
@@ -156,17 +157,7 @@
       border-radius: 10px;
     }
 
-    .inline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .audio {
-      width: 100%;
-    }
-
+    /* Card-like content sections */
     section {
       margin: 1rem 0;
       padding: 1rem 1.25rem;
@@ -186,6 +177,7 @@
     }
   </style>
 
+  <!-- Structured data for search engines -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -204,11 +196,14 @@
   </script>
 </head>
 <body>
+  <!-- Site header -->
   <header>
-    <img class="avatar" src="assets/avatar.jpg" alt="Portrait of alberto">
+    <img class="avatar" src="assets/avatar.jpg" alt="Portrait of Alberto De Rosa">
     <div>
       <h1>Alberto De Rosa</h1>
       <p class="tagline">· bioacoustics · local communities · non-invasive monitoring · habitat suitability · Bayesian inference ·</p>
+
+      <!-- Primary profile links -->
       <div class="inline">
         <a class="btn" href="assets/adr_cv.pdf">Download CV (PDF)</a>
         <a class="btn" href="mailto:derosa1@ualberta.ca">e-mail</a>
@@ -220,12 +215,15 @@
     </div>
   </header>
 
+  <!-- Main page content -->
   <main>
+    <!-- Short biography -->
     <section id="about">
       <h2>About</h2>
       <p>I’m a postdoctoral researcher at the <a href="https://apps.ualberta.ca/directory/person/derosa1?_gl=1*uq700f*_gcl_au*MTUzNzA0MjY5My4xNzYzMDU2Mzcx*_ga*MjAxMzU4NTIwOC4xNzYzMDU2Mzcy*_ga_21TWH2P5G7*czE3NjMwNTYzNzEkbzEkZzEkdDE3NjMwNTY0MDEkajMwJGwwJGgxMDg5ODIzNTMw" target="_blank" rel="noopener noreferrer">University of Alberta</a> (Feb 2023–Dec 2026), working with <a href="https://apps.ualberta.ca/directory/person/kalcouni" target="_blank" rel="noopener noreferrer">Prof. Matina Kalcounis-Rueppell</a> and <a href="https://apps.ualberta.ca/directory/person/bayne" target="_blank" rel="noopener noreferrer">Prof. Erin Bayne</a>. My work focuses on large-scale acoustic monitoring, and ecological modelling, with applications to conservation and management. I am generally interested in Bayesian inference and non-invasive monitoring methods; get in touch if you would like to work together!</p>
     </section>
 
+    <!-- External links and projects -->
     <section id="links">
       <h2>Interesting links</h2>
 
@@ -238,6 +236,7 @@
       <p><a href="https://avianz.net" target="_blank" rel="noopener noreferrer">AviaNZ</a> is a research group, but also an open source piece of software from one of my PhD advisors, <a href="http://www.stephenmonika.net">Stephen Marsland</a>, as well as his students and collaborators.</p>
     </section>
 
+    <!-- Split section: organisations on the left, interests on the right -->
     <section id="interests" class="grid grid-2">
       <div>
         <h2>Professional organisations</h2>
@@ -262,6 +261,7 @@
       </div>
     </section>
 
+    <!-- Publications -->
     <section id="publications">
       <h2>Publications</h2>
       <ul class="list">
@@ -270,6 +270,7 @@
       </ul>
     </section>
 
+    <!-- Conference talks and posters -->
     <section id="presentations">
       <h2>Conference presentations</h2>
       <ul class="list">
@@ -305,6 +306,7 @@ challenges and opportunities for behavioural ecology and conservation.</a> Ecoac
       </ul>
     </section>
 
+    <!-- Education history -->
     <section id="education">
       <h2>Education</h2>
       <ul class="list">
@@ -315,12 +317,14 @@ challenges and opportunities for behavioural ecology and conservation.</a> Ecoac
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div>© <span id="year"></span> Alberto De Rosa · <a href="#about">Top</a></div>
     <div class="meta">Site served by GitHub Pages. Last updated <time datetime="2025-11-13">14 Nov 2025</time>.</div>
   </footer>
 
   <script>
+    /* Keep the copyright year current automatically */
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
