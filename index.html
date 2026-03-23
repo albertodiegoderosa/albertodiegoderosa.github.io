@@ -1,344 +1,207 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Alberto De Rosa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Postdoctoral researcher in bioacoustics, passive acoustic monitoring, and conservation biology.">
-  <meta name="theme-color" content="#f3ecd9">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Postdoctoral researcher in bioacoustics, passive acoustic monitoring, and conservation biology." />
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a58ca">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alberto De Rosa" />
+  <meta property="og:description" content="Postdoctoral researcher in bioacoustics at the University of Alberta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://albertodiegoderosa.github.io/" />
+  <meta property="og:image" content="https://albertodiegoderosa.github.io/assets/og-image.jpg" />
 
-  <meta property="og:title" content="Alberto De Rosa">
-  <meta property="og:description" content="Postdoctoral researcher in bioacoustics at the University of Alberta.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://albertodiegoderosa.github.io/">
-  <meta property="og:image" content="https://albertodiegoderosa.github.io/assets/og-image.jpg">
-
+  <!-- Simple, readable styling -->
   <style>
-    :root {
-      --paper: #f3ecd9;
-      --paper-shadow: #e4dbc5;
-      --ink: #1e1a16;
-      --faint: #6e665d;
-      --rule: #c9bea5;
-      --link: #255c3a;
-      --button-bg: #ebe2ca;
-      --button-border: #9f9378;
-    }
+:root {
+  /* light / default scheme – still dark overall */
+  --bg:    #2b1b10;  /* dark wood brown */
+  --fg:    #f5f5f5;  /* main text (light) */
+  --muted: #c4c4c4;  /* secondary text */
+  --link:  #b8ff7a;  /* light green links/buttons */
+  --card:  #234226;  /* forest-green cards */
+  --accent:#b8ff7a;  /* same as link */
+}
 
-    * {
-      box-sizing: border-box;
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:    #1a1209; /* even deeper wood brown */
+    --fg:    #f5f5f5;
+    --muted: #aaaaaa;
+    --link:  #a4ff6a; /* slightly softer light green */
+    --card:  #1c3520; /* dark forest green */
+    --accent:#a4ff6a;
+  }
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background:
-        radial-gradient(circle at top left, #fbf7ec 0, #f3ecd9 42%, #eadfca 100%);
-      color: var(--ink);
-      font: 18px/1.7 "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", "Noteworthy", cursive;
-      letter-spacing: 0.01em;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 0.12em;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration-style: wavy;
-    }
-
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    .sheet {
-      background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0.08));
-      border: 1px solid rgba(120, 103, 77, 0.18);
-      border-radius: 18px;
-      box-shadow:
-        0 8px 24px rgba(56, 41, 20, 0.08),
-        inset 0 1px 0 rgba(255,255,255,0.45);
-      padding: 1.4rem 1.2rem;
-    }
-
-    header {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 1.2rem;
-      align-items: start;
-      margin-bottom: 1.4rem;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 146px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 2px solid var(--rule);
-      background: var(--paper-shadow);
-      transform: rotate(-1.4deg);
-      box-shadow: 0 6px 16px rgba(50, 35, 15, 0.12);
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 2.2vw + 1.3rem, 3rem);
-      margin-bottom: 0.35rem;
-    }
-
-    h2 {
-      font-size: 1.45rem;
-      margin-bottom: 0.7rem;
-      padding-bottom: 0.25rem;
-      border-bottom: 2px dashed var(--rule);
-    }
-
-    p,
-    ul {
-      margin: 0 0 1rem;
-    }
-
-    .tagline {
-      color: var(--faint);
-      margin-bottom: 0.9rem;
-    }
-
-    .inline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.38rem 0.72rem;
-      background: var(--button-bg);
-      border: 1.5px solid var(--button-border);
-      border-radius: 999px;
-      color: var(--ink);
-      text-decoration: none;
-      box-shadow: 0 2px 0 rgba(80, 63, 35, 0.08);
-    }
-
-    .btn:hover,
-    .btn:focus {
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-
-    main > section {
-      margin-top: 1.3rem;
-      padding-top: 0.15rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    @media (min-width: 800px) {
-      .grid-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .list {
-      padding-left: 1.25rem;
-    }
-
-    .list li {
-      margin: 0.5rem 0;
-    }
-
-    .meta {
-      color: var(--faint);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      margin-top: 1.8rem;
-      padding-top: 1rem;
-      border-top: 2px dashed var(--rule);
-    }
-
-    time {
-      font-style: italic;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        font-size: 17px;
-      }
-
-      header {
-        grid-template-columns: 1fr;
-      }
-
-      .avatar {
-        width: 96px;
-        height: 128px;
-      }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:var(--fg)}
+    a{color:var(--link);text-decoration:none}
+    a:hover,a:focus{text-decoration:underline}
+    header,main,footer{max-width:920px;margin:0 auto;padding:1.5rem}
+    header{display:grid;grid-template-columns:96px 1fr;gap:1.25rem;align-items:center}
+    .avatar{width:96px;height:128px;border-radius:50%;object-fit:cover;background:var(--card)}
+    h1{margin:0 0 .25rem;font-size:clamp(1.6rem,2.5vw + 1rem,2.4rem)}
+    .tagline{margin:0;color:var(--muted)}
+    .pill{display:inline-block;padding:.25rem .6rem;border:1px solid var(--muted);border-radius:999px;margin:.25rem .35rem .25rem 0;font-size:.9rem;color:var(--muted)}
+    section{background:var(--card);border-radius:14px;padding:1rem 1.25rem;margin:1rem 0}
+    h2{margin-top:0;font-size:1.25rem}
+    .grid{display:grid;gap:.9rem}
+    @media (min-width:800px){.grid-2{grid-template-columns:1fr 1fr}}
+    .item h3{margin:.2rem 0;font-size:1rem}
+    .meta{color:var(--muted);font-size:.95rem}
+    .list{padding-left:1.1rem}
+    .list li{margin:.35rem 0}
+    .btn{display:inline-block;padding:.5rem .9rem;border-radius:10px;border:1px solid var(--accent)}
+    .inline{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+    .audio{width:100%}
+    footer{color:var(--muted);font-size:.9rem}
+    code{background:rgba(64,130,46,.8);padding:.1rem .35rem;border-radius:6px}
   </style>
 
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alberto De Rosa",
-    "jobTitle": "Postdoctoral Researcher",
-    "affiliation": "University of Alberta",
-    "url": "https://albertodiegoderosa.github.io/",
-    "sameAs": [
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Alberto De Rosa",
+    "jobTitle":"Postdoctoral Researcher",
+    "affiliation":"University of Alberta",
+    "url":"https://albertodiegoderosa.github.io/",
+    "sameAs":[
       "https://orcid.org/0000-0002-8645-2547",
       "https://www.researchgate.net/profile/Alberto-De-Rosa-2",
       "https://scholar.google.com/citations?user=COwjDwwAAAAJ&hl=en&oi=ao",
-      "https://github.com/albertodiegoderosa"
+      "https://github.com/albertodiegoderosa",
     ]
   }
   </script>
 </head>
 <body>
-  <div class="page">
-    <div class="sheet">
-      <header>
-        <img class="avatar" src="assets/avatar.jpg" alt="Portrait of alberto">
-        <div>
-          <h1>Alberto De Rosa</h1>
-          <p class="tagline">· bioacoustics · local communities · non-invasive monitoring · habitat suitability · Bayesian inference ·</p>
-          <div class="inline">
-            <a class="btn" href="assets/adr_cv.pdf">Download CV (PDF)</a>
-            <a class="btn" href="mailto:derosa1@ualberta.ca">e-mail</a>
-            <a class="btn" href="https://orcid.org/0000-0002-8645-2547" target="_blank" rel="noopener noreferrer">ORCID</a>
-            <a class="btn" href="https://www.researchgate.net/profile/Alberto-De-Rosa-2" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-            <a class="btn" href="https://scholar.google.com/citations?user=COwjDwwAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a class="btn" href="https://github.com/albertodiegoderosa" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section id="about">
-          <h2>About</h2>
-          <p>I’m a postdoctoral researcher at the <a href="https://apps.ualberta.ca/directory/person/derosa1?_gl=1*uq700f*_gcl_au*MTUzNzA0MjY5My4xNzYzMDU2Mzcx*_ga*MjAxMzU4NTIwOC4xNzYzMDU2Mzcy*_ga_21TWH2P5G7*czE3NjMwNTYzNzEkbzEkZzEkdDE3NjMwNTY0MDEkajMwJGwwJGgxMDg5ODIzNTMw" target="_blank" rel="noopener noreferrer">University of Alberta</a> (Feb 2023–Dec 2026), working with <a href="https://apps.ualberta.ca/directory/person/kalcouni" target="_blank" rel="noopener noreferrer">Prof. Matina Kalcounis-Rueppell</a> and <a href="https://apps.ualberta.ca/directory/person/bayne" target="_blank" rel="noopener noreferrer">Prof. Erin Bayne</a>. My work focuses on large-scale acoustic monitoring, and ecological modelling, with applications to conservation and management. I am generally interested in Bayesian inference and non-invasive monitoring methods; get in touch if you would like to work together!</p>
-        </section>
-
-        <section id="links">
-          <h2>Interesting links</h2>
-          <p>I have been recently working with <a href="https://www.researchgate.net/profile/Apoorv-Saini" target="_blank" rel="noopener noreferrer">Apoorv Saini</a>, a great PhD Student in the Bioacoustic Unit. Amongst other things, we are working on an experiment that we co-designed with the Conklin Métis community to get an idea of whether (and how much) industrial noise affects sound propagation, specifically of Moose calls; we had two journalists, <a href="https://fortmcmurraytoday.com/author/vmcdermott/" target="_blank" rel="noopener noreferrer">Vince</a> from the <a href="https://www.fortmcmurraytoday.com/news/study-probes-how-noise-impacts-moose-hunting-south-of-fort-mcmurray" target="_blank" rel="noopener noreferrer">Fort McMurray Today</a> and <a href="https://www.cbc.ca/news/canada/edmonton/author/jesmeen-gill-1.7558518" target="_blank" rel="noopener noreferrer">Jasmeen</a> from <a href="https://www.cbc.ca/news/canada/edmonton/researchers-hunters-study-how-oilsands-noise-might-impact-moose-hunting-9.6956723" target="_blank" rel="noopener noreferrer"> CBC</a>, joining us for one day in the field.</p>
-
-          <p><a href="https://five.epicollect.net" target="_blank" rel="noopener noreferrer">epicollect</a> is a free and very handy website and mobile application to coveniently collect data in the field without relying on paper.</p>
-
-          <p><a href="https://wildtrax.ca" target="_blank" rel="noopener noreferrer">WildTrax</a> is a great tool to work with acoustic and other remote sensing data.</p>
-
-          <p><a href="https://avianz.net" target="_blank" rel="noopener noreferrer">AviaNZ</a> is a research group, but also an open source piece of software from one of my PhD advisors, <a href="http://www.stephenmonika.net">Stephen Marsland</a>, as well as his students and collaborators.</p>
-        </section>
-
-        <section id="interests" class="grid grid-2">
-          <div>
-            <h2>Professional organisations</h2>
-            <ul class="list">
-              <li><a href="https://ibac.info/" target="_blank" rel="noopener noreferrer">International Bioacoustics Society</a></li>
-              <li><a href="https://www.nasbr.org/" target="_blank" rel="noopener noreferrer">North American Society for Bat Research</a></li>
-              <li><a href="https://wildlife.org/" target="_blank" rel="noopener noreferrer">The Wildlife Society</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2>Research interests</h2>
-            <ul class="list">
-              <li>Community-led studies with applied bioacoustics and remote sensing</li>
-              <li>Passive acoustic monitoring; detection &amp; classification</li>
-              <li>Anthropogenic noise modelling &amp; mapping</li>
-              <li>Abundance &amp; habitat models; spatially explicit capture-recapture; spatial mark-resight</li>
-              <li>Study design, annotation workflows, reproducible analysis</li>
-              <li>Soundscapes; Dirichlet-multinomial approaches</li>
-              <li>Structural equations, Networks, Approximate Bayesian Computation</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="publications">
-          <h2>Publications</h2>
-          <ul class="list">
-            <li>Alberto De Rosa, Isabel Castro, Stephen Marsland. 2021. <a href="https://doi.org/10.1111/ibi.13033" target="_blank" rel="noopener noreferrer">The playback technique in avian fieldwork contexts</a>. <em>Ibis</em>. <a href="assets/papers/ibi_2021.pdf">PDF</a></li>
-            <li>Isabel Castro, Alberto De Rosa, Nirosha Priyadarshani, Leanne Bradbury, Stephen Marsland. 2019. <a href="https://doi.org/10.1002/ece3.4775" target="_blank" rel="noopener noreferrer">Experimental test of bird-call detection by ARUs and by human observers</a>. <em>Ecology &amp; Evolution</em>. <a href="assets/papers/ece3_2019.pdf">PDF</a></li>
-          </ul>
-        </section>
-
-        <section id="presentations">
-          <h2>Conference presentations</h2>
-          <ul class="list">
-            <li>De Rosa, A., Hurtado, C., Bayne, E., and Kalcounis-Rueppell, M. --- Modelling Bat Echolocation Data at Provincial Scales: Structure: Signal Uncertainty, and Spatial Grain --- North American Society of Bat Research Conference --- Edmonton, Alberta -- Canada. October 2025.</li>
-
-            <li>De Rosa, A., Hurtado, C., Bayne, E., and Kalcounis-Rueppell, M. --- Model Structure Selection to Minimise Uncertainty in Modelling Hoary Bat Echolocation Detections in Alberta --- The Wildlife Society --- Edmonton, Alberta --- Canada. October 2025.</li>
-
-            <li>De Rosa, A., Castro, I., Marsland, S. --- Implementing Spatial Mark Resight Models With Acoustic Activity Data Described Through Environmental Covariates. International BioAcoustic Congress --- Sapporo, Hokkaido -- Japan. November 2023.</li>
-
-            <li>De Rosa, A., Hurtado, C., Kalcounis-Rueppell, M., Bayne, E. --- Landscape level correlates of bats in the boreal region of Alberta, Canada. North American Society of Bat Research Conference --- Winnipeg, Manitoba -- Canada. October 2023.</li>
-
-            <li>Marsland, S., De Rosa, A., Castro, I., --- Animal-borne acoustic recorders can inform consistent abundance estimates based on passive acoustic monitoring. New Zealand Ecological Society Conference --- Dunedin, Otago --- Aotearoa New Zealand. November 2022.</li>
-
-            <li>Castro, I., Feenstra, E., De Rosa, A., Marsland, S. --- Smile! You are on camera: use of trail cameras to estimate the abundance of a cryptic, unmarked species, Stewart Island kiwi/Rakiura tokoeka. New Zealand Ecological Society Conference --- Dunedin, Otago --- Aotearoa New Zealand. November 2022.</li>
-
-            <li>De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Pairing Community and Individual Vocal Activity Data can Inform Consistent Abundance Estimates Using Animal-Borne Acoustic Recorders. North American Congress for Conservation Biology --- Reno, Nevada -- United States of America. July 2022.</li>
-
-            <li>De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Animal-Borne Acoustic Recorders Inform Mark-Resight Models For Abundance Estimates In North Island Brown Kiwi (<em>Apteryx mantelli</em>). International Statistical Ecology Congress --- Cape Town, South Africa. June 2022.</li>
-
-            <li>De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Using animal-borne acoustic recorders to inform abundance estimates in Kiwi (Apterigiformes). National Kiwi Hui -- Lyttelton, Canterbury, Aotearoa New Zealand. June 2022.</li>
-
-            <li>De Rosa, A., Castro, I., Olsen, D., Marsland, S. --- Miniature animal-borne acoustic recording units as aids to investigate vocal behaviour and derive population density estimations. Australasian Ornithological Conference. Auckland, Aotearoa New Zealand. February 2022.</li>
-
-            <li>De Rosa, A., Olsen, D., Castro, I., Marsland, S.--- <a href="https://www.youtube.com/watch?v=bHT7ywBlvgU" target="_blank" rel="noopener noreferrer">Miniature Acoustic Recorders Embedded Into Kiwi Transmitters: challenges and opportunities for behavioural ecology and conservation.</a> Ecoacoustic Congress, Urbino, Italy. June 2021.</li>
-
-            <li>De Rosa, A., White, A., Castro, I., Marsland, S., 2019. Hey, R. U. There? Autonomous Recording Units - ARUs - as means to monitor sounds in a spatially explicit fashion. Poster presentation at: Statistical Ecology and Environmental Management Conference, Wellington, , Aotearoa New Zealand. December 2019. <a href="https://www.youtube.com/watch?v=vkmJ1qn05YA" target="_blank" rel="noopener noreferrer">[here is a short video example of the experiment]</a></li>
-
-            <li>Marsland, S., Priyadarshani, N., Juodakis, J., Castro, I., De Rosa, A., Listanti, V., Feenstra, E., 2019. AviaNZ: Software and Research into Acoustic Monitoring of Birds. Birds New Zealand Conference, Wellington, June 2019</li>
-
-            <li>Castro, I., Marsland, S., Priyadarshani, N., Juodakis, J., De Rosa, A., Listanti, V., Feenstra, E., 2019. Unobtrusive monitoring of Kiwi. Birds New Zealand Conference, Wellington, June 2019</li>
-          </ul>
-        </section>
-
-        <section id="education">
-          <h2>Education</h2>
-          <ul class="list">
-            <li>PhD (Zoology), 2022 — Massey University, Aotearoa New Zealand. Thesis: <a href="https://mro.massey.ac.nz/items/cd6eaaa7-7ea8-4c21-a3e5-916b5e0712ee" target="_blank" rel="noopener noreferrer">On kiwi (<em>Apteryx mantelli</em>) vocal behaviour and activity : relations to population densities and applications to conservation</a>.</li>
-            <li>MSc (Biodiversity &amp; Evolution), 2014 — University of Bologna, Italy. Thesis: Inter-specific foraging behaviour analysis in a mixed group of birds, in a semi--natural area in the Wild Birds Recovery Centre of Faenza (RA), Italy.</li>
-            <li>BSc (Biological Sciences), 2007 — University of Bologna, Italy Thesis: the wolves (<em>Canis lupus</em>) in the Monti Sibillini National Park: a snowtracking survey.</li>
-          </ul>
-        </section>
-      </main>
-
-      <footer>
-        <div>© <span id="year"></span> Alberto De Rosa · <a href="#about">Top</a></div>
-        <div class="meta">Site served by GitHub Pages. Last updated <time datetime="2025-11-13">14 Nov 2025</time>.</div>
-      </footer>
+  <header>
+    <img class="avatar" src="assets/avatar.jpg" alt="Portrait of alberto" />
+    <div>
+      <h1>Alberto De Rosa</h1>
+      <p class="tagline">· bioacoustics · local communities · non-invasive monitoring · habitat suitability · Bayesian inference ·</p>
+      <div class="inline">
+        <a class="btn" href="assets/adr_cv.pdf">Download CV (PDF)</a>
+        <a class="btn" href="mailto:derosa1@ualberta.ca">e-mail</a>
+        <a class="btn" href="https://orcid.org/0000-0002-8645-2547" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <a class="btn" href="https://www.researchgate.net/profile/Alberto-De-Rosa-2" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=COwjDwwAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a class="btn" href="https://github.com/albertodiegoderosa" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a postdoctoral researcher at the <a href="https://apps.ualberta.ca/directory/person/derosa1?_gl=1*uq700f*_gcl_au*MTUzNzA0MjY5My4xNzYzMDU2Mzcx*_ga*MjAxMzU4NTIwOC4xNzYzMDU2Mzcy*_ga_21TWH2P5G7*czE3NjMwNTYzNzEkbzEkZzEkdDE3NjMwNTY0MDEkajMwJGwwJGgxMDg5ODIzNTMw" target="_blank" rel="noopener noreferrer">University of Alberta</a> (Feb 2023–Dec 2026), working with <a href="https://apps.ualberta.ca/directory/person/kalcouni" target="_blank" rel="noopener noreferrer">Prof. Matina Kalcounis-Rueppell</a> and <a href="https://apps.ualberta.ca/directory/person/bayne" target="_blank" rel="noopener noreferrer">Prof. Erin Bayne</a>. My work focuses on large-scale acoustic monitoring, and ecological modelling, with applications to conservation and management. I am generally interested in Bayesian inference and non-invasive monitoring methods; get in touch if you would like to work together!</p>
+    </section>
+
+    <section id="links">
+      <h2>Interesting links</h2>
+      <p>I have been recently working with <a href="https://www.researchgate.net/profile/Apoorv-Saini" target="_blank" rel="noopener noreferrer">Apoorv Saini</a>, a great PhD Student in the Bioacoustic Unit. Amongst other things, we are working on an experiment that we co-designed with the Conklin Métis community to get an idea of whether (and how much) industrial noise affects sound propagation, specifically of Moose calls; we had two journalists, <a href="https://fortmcmurraytoday.com/author/vmcdermott/" target="_blank" rel="noopener noreferrer">Vince</a> from the <a href="https://www.fortmcmurraytoday.com/news/study-probes-how-noise-impacts-moose-hunting-south-of-fort-mcmurray" target="_blank" rel="noopener noreferrer">Fort McMurray Today</a> and <a href="https://www.cbc.ca/news/canada/edmonton/author/jesmeen-gill-1.7558518" target="_blank" rel="noopener noreferrer">Jasmeen</a> from <a href="https://www.cbc.ca/news/canada/edmonton/researchers-hunters-study-how-oilsands-noise-might-impact-moose-hunting-9.6956723" target="_blank" rel="noopener noreferrer"> CBC</a>, joining us for one day in the field.</p>
+
+      <p><a href="https://five.epicollect.net" target="_blank" rel="noopener noreferrer">epicollect</a> is a free and very handy website and mobile application to coveniently collect data in the field without relying on paper.</p>
+
+      <p><a href="https://wildtrax.ca" target="_blank" rel="noopener noreferrer">WildTrax</a> is a great tool to work with acoustic and other remote sensing data.</p>
+
+      <p> <a href="https://avianz.net" target="_blank" rel="noopener noreferrer">AviaNZ</a> is a research group, but also an open source piece of software from one of my PhD advisors, <a href="http://www.stephenmonika.net">Stephen Marsland</a>, as well as his students and collaborators. </p>
+
+    </section>
+
+    <section id="interests" class="grid grid-2">
+      <div>
+        <h2>Professional organisations</h2>
+        <ul class="list">
+          <li><a href="https://ibac.info/" target="_blank" rel="noopener noreferrer">International Bioacoustics Society</a></li>
+          <li><a href="https://www.nasbr.org/" target="_blank" rel="noopener noreferrer">North American Society for Bat Research</a></li>
+          <li><a href="https://wildlife.org/" target="_blank" rel="noopener noreferrer">The Wildlife Society</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Research interests</h2>
+        <ul class="list">
+          <li>Community-led studies with applied bioacoustics and remote sensing </li>
+          <li>Passive acoustic monitoring; detection &amp; classification</li>
+          <li> Anthropogenic noise modelling &amp; mapping</li>
+          <li>Abundance &amp; habitat models; spatially explicit capture-recapture; spatial mark-resight</li>
+          <li>Study design, annotation workflows, reproducible analysis</li>
+          <li>Soundscapes; Dirichlet-multinomial approaches </li>
+          <li> Structural equations, Networks, Approximate Bayesian Computation </li>
+        </ul>
+      </div>
+    </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="list">
+        <li>Alberto De Rosa, Isabel Castro, Stephen Marsland. 2021. <a href="https://doi.org/10.1111/ibi.13033" target="_blank" rel="noopener noreferrer">The playback technique in avian fieldwork contexts</a>. <em>Ibis</em>. <a href="assets/papers/ibi_2021.pdf">PDF</a></li>
+        <li>Isabel Castro, Alberto De Rosa, Nirosha Priyadarshani, Leanne Bradbury, Stephen Marsland. 2019. <a href="https://doi.org/10.1002/ece3.4775" target="_blank" rel="noopener noreferrer">Experimental test of bird-call detection by ARUs and by human observers</a>. <em>Ecology &amp; Evolution</em>. <a href="assets/papers/ece3_2019.pdf">PDF</a></li>
+      </ul>
+    </section>
+
+      <div>
+        <h2>Conference presentations</h2>
+        <ul class="list">
+<li> De Rosa, A., Hurtado, C., Bayne, E., and Kalcounis-Rueppell, M. --- Modelling Bat Echolocation Data at Provincial Scales: Structure: Signal Uncertainty, and Spatial Grain --- North American Society of Bat Research Conference --- Edmonton, Alberta -- Canada. October 2025. </li>
+
+
+<li> De Rosa, A., Hurtado, C., Bayne, E., and Kalcounis-Rueppell, M. --- Model Structure Selection to Minimise Uncertainty in Modelling Hoary Bat Echolocation Detections in Alberta --- The Wildlife Society --- Edmonton, Alberta --- Canada. October 2025. </li>
+
+<li> De Rosa, A., Castro, I., Marsland, S. --- Implementing Spatial Mark Resight Models With Acoustic Activity Data  Described Through Environmental Covariates. International BioAcoustic Congress --- Sapporo, Hokkaido -- Japan. November 2023. </li>
+
+<li> De Rosa, A., Hurtado, C., Kalcounis-Rueppell, M., Bayne, E. --- Landscape level correlates of bats in the boreal region of Alberta, Canada. North American Society of Bat Research Conference --- Winnipeg, Manitoba -- Canada. October 2023. </li>
+
+<li> Marsland, S., De Rosa, A., Castro, I., --- Animal-borne acoustic recorders can inform consistent abundance estimates based on passive acoustic monitoring. New Zealand Ecological Society Conference --- Dunedin, Otago --- Aotearoa New Zealand. November 2022. </li>
+
+<li> Castro, I., Feenstra, E., De Rosa, A., Marsland, S. --- Smile! You are on camera: use of trail cameras to estimate the abundance of a cryptic, unmarked species, Stewart Island kiwi/Rakiura tokoeka. New Zealand Ecological Society Conference --- Dunedin, Otago --- Aotearoa New Zealand. November 2022. </li>
+
+<li> De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Pairing Community and Individual Vocal Activity Data can Inform Consistent Abundance Estimates Using Animal-Borne Acoustic Recorders. North American Congress for Conservation Biology --- Reno, Nevada -- United States of America. July 2022. </li>
+
+<li> De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Animal-Borne Acoustic Recorders Inform Mark-Resight Models For Abundance Estimates In North Island Brown Kiwi (<em>Apteryx mantelli</em>). International Statistical Ecology Congress --- Cape Town, South Africa. June 2022. </li>
+
+<li> De Rosa, A., Olsen, D., Castro, I., Marsland, S. --- Using animal-borne acoustic recorders to inform abundance estimates in
+Kiwi (Apterigiformes). National Kiwi Hui -- Lyttelton, Canterbury, Aotearoa New Zealand. June 2022. </li>
+
+<li> De Rosa, A., Castro, I., Olsen, D., Marsland, S. --- Miniature animal-borne acoustic recording units as aids to investigate vocal behaviour and derive population density estimations. Australasian Ornithological Conference. Auckland, Aotearoa New Zealand. February 2022. </li>
+
+<li> De Rosa, A., Olsen, D., Castro, I., Marsland, S.--- <a href="https://www.youtube.com/watch?v=bHT7ywBlvgU" target="_blank" rel="noopener noreferrer">Miniature Acoustic Recorders Embedded Into Kiwi Transmitters:
+challenges and opportunities for behavioural ecology and conservation.</a> Ecoacoustic Congress, Urbino, Italy. June 2021. </li>
+
+<li> De Rosa, A., White, A., Castro, I., Marsland, S., 2019. Hey, R. U. There? Autonomous Recording Units - ARUs - as means to monitor sounds in a spatially explicit fashion. Poster presentation at: Statistical Ecology and Environmental Management Conference, Wellington, , Aotearoa New Zealand. December 2019. <a href="https://www.youtube.com/watch?v=vkmJ1qn05YA" target="_blank" rel="noopener noreferrer">[here is a short video example of the experiment]</a></li>
+
+<li> Marsland, S., Priyadarshani, N., Juodakis, J., Castro, I., De Rosa, A., Listanti, V., Feenstra, E., 2019. AviaNZ: Software and Research into Acoustic Monitoring of Birds. Birds New Zealand Conference, Wellington, June 2019 </li>
+
+<li> Castro, I., Marsland, S., Priyadarshani, N., Juodakis, J., De Rosa, A., Listanti, V., Feenstra, E., 2019. Unobtrusive monitoring of Kiwi. Birds New Zealand Conference, Wellington, June 2019 </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="list">
+        <li>PhD (Zoology), 2022 — Massey University, Aotearoa New Zealand. Thesis: <a href="https://mro.massey.ac.nz/items/cd6eaaa7-7ea8-4c21-a3e5-916b5e0712ee" target="_blank" rel="noopener noreferrer">On kiwi (<em>Apteryx mantelli</em>) vocal behaviour and activity : relations to population densities and applications to conservation</a>.</li>
+        <li>MSc (Biodiversity &amp; Evolution), 2014 — University of Bologna, Italy. Thesis: Inter-specific foraging behaviour analysis in a mixed group of birds, in a semi--natural area in the Wild Birds Recovery Centre of Faenza (RA), Italy.</li>
+        <li>BSc (Biological Sciences), 2007 — University of Bologna, Italy Thesis: the wolves (<em>Canis lupus</em>) in the Monti Sibillini National Park: a snowtracking survey.</li>
+      </ul>
+    </section>
+
+   </main>
+
+  <footer>
+    <div>© <span id="year"></span> Alberto De Rosa · <a href="#about">Top</a></div>
+    <div class="meta">Site served by GitHub Pages. Last updated <time datetime="2025-11-13">14 Nov 2025</time>.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
